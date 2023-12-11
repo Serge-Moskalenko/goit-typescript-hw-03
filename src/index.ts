@@ -1,64 +1,58 @@
-class Key {
-    constructor( private signature:number=0){
-        if(this.signature === 0){
-            this.signature= Math.random()
-        }
-    };
+// class Key {
+//     constructor( private signature:number=0){
+//         if(this.signature === 0){
+//             this.signature= Math.random()
+//         }
+//     };
 
-   public getSignature():number{
-        return this.signature
-    };
-};
+//    public getSignature():number{
+//         return this.signature
+//     };
+// };
 
-class Person { 
-    constructor( private key:any ){};
+// class Person { 
+//     constructor( private key: Key ){};
 
-    getKey():number{
+//     getKey():number{
         
-       return this.key.signature; 
-    };
-};
+//       return this.key.getSignature(); 
+//     };
+// };
 
-type Door= false|true;
+//  abstract class House{
+//   public door:boolean=false;;
+//   public tenents:object[]=[];
 
- abstract class House{
-  public door:Door;
-  public tenents:object[]=[];
-  constructor(protected key){
-    this.key=key;
-  }
+//   constructor(protected key:Key){}
 
-  public comeIn(person:object):void{
-    if(this.door ){
-        this.tenents.push(person)
-    } 
-  };
+//   public comeIn(person:object):void{
+//     if(this.door ){
+//         this.tenents.push(person)
+//     } 
+//   };
 
-  public abstract OpenDoor(key:number):boolean;
-};
+//   public abstract OpenDoor(key:number):boolean;
+// };
 
-class MyHouse extends House {
-    constructor(public key){
-        super(key)
-    }
+// class MyHouse extends House {
 
-  public  OpenDoor(key){
-        if(key === this.key.signature){
-            return  this.door=true;
-        } return this.door= false
-    };
-};
+//   public  OpenDoor(key){
+//         if(key === this.key.getSignature()){
+//             return  this.door=true;
+//         } return this.door= false
+//     };
+// };
 
-const key = new Key();
-const house = new MyHouse(key);
-const person = new Person(key);
+// const key = new Key();
+// const house = new MyHouse(key);
+// const person = new Person(key);
 
-house.OpenDoor(person.getKey());
-house.comeIn(person);
+// house.OpenDoor(person.getKey());
+// house.comeIn(person);
 
-console.log(key.getSignature());
-console.log(person.getKey())
-console.log(house.OpenDoor(person.getKey()))
-console.log(house.door)
-console.log(house.tenents)
+// console.log(key.getSignature());
+// console.log(person.getKey())
+// console.log(house.OpenDoor(person.getKey()))
+// console.log(house.door)
+// console.log(house.tenents)
 
