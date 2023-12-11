@@ -1,11 +1,8 @@
 // class Key {
-//     constructor( private signature:number=0){
-//         if(this.signature === 0){
-//             this.signature= Math.random()
-//         }
-//     };
+    
+//     private signature:number = Math.random();
 
-//    public getSignature():number{
+//     public getSignature():number{
 //         return this.signature
 //     };
 // };
@@ -13,9 +10,9 @@
 // class Person { 
 //     constructor( private key: Key ){};
 
-//     getKey():number{
+//     getKey():Key{
         
-//       return this.key.getSignature(); 
+//       return this.key; 
 //     };
 // };
 
@@ -31,15 +28,15 @@
 //     } 
 //   };
 
-//   public abstract OpenDoor(key:number):boolean;
+//   public abstract OpenDoor(key:Key):void;
 // };
 
 // class MyHouse extends House {
 
 //   public  OpenDoor(key){
-//         if(key === this.key.getSignature()){
+//         if(key.getSignature() === this.key.getSignature()){
 //             return  this.door=true;
-//         } return this.door= false
+//         } 
 //     };
 // };
 
